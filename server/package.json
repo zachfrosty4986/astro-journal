@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Files for astro-journal",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm i",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachfrosty4986/astro-journal.git"
+  },
+  "author": "Zachary Magras, Destiny Jenkins, Vincent Camarco, Chris Arustamyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zachfrosty4986/astro-journal/issues"
+  },
+  "homepage": "https://github.com/zachfrosty4986/astro-journal#readme",
+  "dependencies": {
+    "inquirer": "^8.2.6"
+  }
+}
