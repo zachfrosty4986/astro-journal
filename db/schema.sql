@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS cosmic_db;
+
+CREATE DATABASE cosmic_db;
+
