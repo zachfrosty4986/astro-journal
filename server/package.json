@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/zachfrosty4986/astro-journal#readme",
   "dependencies": {
-    "inquirer": "^8.2.6"
+    "inquirer": "^8.2.6",
+    "sequelize": "^6.37.3"
   }
 }
