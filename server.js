@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 //handlebars engine
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create();
 
 //cookie setup
 const sess = {
