@@ -1,3 +1,4 @@
+
 -- Drop the database if it exists
 DROP DATABASE IF EXISTS cosmic_db;
 
@@ -29,3 +30,4 @@ CREATE TABLE userData (
     userName VARCHAR(30) NOT NULL, -- Cannot be null 
     password VARCHAR(30) NOT NULL -- Cannot be null
 );
+
