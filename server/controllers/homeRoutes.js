@@ -20,5 +20,5 @@ router.get('/profile', async (req, res) => {
 router.get('/login', async (req, res) => {
     //route to redirect login to profile
 })
-
+//
 module.exports = router;
