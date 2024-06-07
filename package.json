@@ -4,7 +4,6 @@
   "description": "Files for astro-journal",
   "main": "server.js",
   "scripts": {
-    "test": "npm i",
     "start": "node server.js"
   },
   "repository": {
