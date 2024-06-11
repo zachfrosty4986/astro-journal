@@ -8,10 +8,8 @@ User.hasMany(Blog, {
 });
 
 //relationship stating a blog belongs to a user
-
 Blog.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
 module.exports = { User, Blog }
-
