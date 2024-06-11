@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html data-theme="light">
+    {{!-- <-- Linking our files to this handebar --> --}}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Astro Journal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+      <!-- Navbar Section for homepage -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{'https://bulma.io'}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1200pt" height="1200pt" version="1.1"
+                    viewBox="0 0 1200 1200">
+                    <g>
+                        <path d="{{svgPathData}}" />
+                    </g>
+                </svg>
+            </a>
+        </div>
+    </nav>
