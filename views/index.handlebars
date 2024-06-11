@@ -1,4 +1,48 @@
 <!DOCTYPE html>
+<html data-theme="{{theme}}">
+    {{!-- <-- Linking our files to this handebar --> --}}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- Navbar Section for homepage -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{{'https://bulma.io'}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200">
+                <g>
+                 <path d="{{svgPathData}}"/>
+                </g>
+            </svg>
+          </a>
+        </div>
+    </nav>
+
+    <!-- Content Section for autofilling -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">{{heading}}</h1>
+        <p class="subtitle">{{subheading}}</p>
+        <div class="content">
+          {{#each content}}
+            <p>{{this}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+
+    {{!-- Linking our js files for functionality to our hadlebar  --}}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
+
+{{!-- <!DOCTYPE html>
 <html data-theme="light">
   <head>
     <meta charset="utf-8">
@@ -132,4 +176,4 @@
       </footer>
 
   </body>
-</html>
+</html> --}} 
