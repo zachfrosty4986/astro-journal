@@ -1,0 +1,17 @@
+main {
+    display: flex;
+}
+
+main aside {
+    width: 20%;
+}
+
+main article {
+    width: 75%;
+}
+.image {
+    display: block;
+    position: relative;
+    float: right;
+    width: 10%;
+}
