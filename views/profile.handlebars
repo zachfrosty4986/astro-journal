@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html data-theme="{{theme}}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-  </head>
-  <body>
+<body>
   <section class="section">
     <div class="container">
       <h1 class="title">
-        {{heading}}
+        {{title}}
       </h1>
       <p class="subtitle">
         {{subheading}} <strong>{{highlight}}</strong>!
@@ -21,45 +13,49 @@
     <p class="menu-label">General</p>
     <ul class="menu-list">
       {{#each general}}
-        <li><a>{{this}}</a></li>
+      <li><a>{{this}}</a></li>
       {{/each}}
     </ul>
     <p class="menu-label">Administration</p>
     <ul class="menu-list">
       {{#each administration}}
-        <li>
-          <a class="{{#if this.active}}is-active{{/if}}">{{this.name}}</a>
-          {{#if this.submenu}}
-            <ul>
-              {{#each this.submenu}}
-                <li><a>{{this}}</a></li>
-              {{/each}}
-            </ul>
-          {{/if}}
-        </li>
+      <li>
+        <a class="{{#if this.active}}is-active{{/if}}">{{this.name}}</a>
+        {{#if this.submenu}}
+        <ul>
+          {{#each this.submenu}}
+          <li><a>{{this}}</a></li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </li>
       {{/each}}
     </ul>
     <p class="menu-label">Transactions</p>
     <ul class="menu-list">
       {{#each transactions}}
-        <li><a>{{this}}</a></li>
+      <li><a>{{this}}</a></li>
       {{/each}}
     </ul>
   </aside>
-  </body>
+</body>
+
 </html>
 
 
 
-{{!-- <!DOCTYPE html>
+{{!--
+<!DOCTYPE html>
 <html data-theme="light">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+</head>
+
+<body>
   <section class="section">
     <div class="container">
       <h1 class="title">
@@ -98,5 +94,6 @@
       <li><a>Balance</a></li>
     </ul>
   </aside>
-  </body>
+</body>
+
 </html> --}}
