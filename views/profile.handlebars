@@ -1,4 +1,57 @@
 <!DOCTYPE html>
+<html data-theme="{{theme}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        {{heading}}
+      </h1>
+      <p class="subtitle">
+        {{subheading}} <strong>{{highlight}}</strong>!
+      </p>
+    </div>
+  </section>
+  <aside class="menu">
+    <p class="menu-label">General</p>
+    <ul class="menu-list">
+      {{#each general}}
+        <li><a>{{this}}</a></li>
+      {{/each}}
+    </ul>
+    <p class="menu-label">Administration</p>
+    <ul class="menu-list">
+      {{#each administration}}
+        <li>
+          <a class="{{#if this.active}}is-active{{/if}}">{{this.name}}</a>
+          {{#if this.submenu}}
+            <ul>
+              {{#each this.submenu}}
+                <li><a>{{this}}</a></li>
+              {{/each}}
+            </ul>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+    <p class="menu-label">Transactions</p>
+    <ul class="menu-list">
+      {{#each transactions}}
+        <li><a>{{this}}</a></li>
+      {{/each}}
+    </ul>
+  </aside>
+  </body>
+</html>
+
+
+
+{{!-- <!DOCTYPE html>
 <html data-theme="light">
   <head>
     <meta charset="utf-8">
@@ -46,4 +99,4 @@
     </ul>
   </aside>
   </body>
-</html>
+</html> --}}

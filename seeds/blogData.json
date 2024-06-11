@@ -1,0 +1,23 @@
+[
+    {
+      "blogTitle": "Mars Image",
+      "blogContent": "This is an Image I took of Mars through my Telescope! I hope you like it!",
+      "likes": "43",
+      "dislikes": "3",
+      "comments": "Very Cool Photo!"
+    },
+    {
+      "blogTitle": "Jupiter!",
+      "blogContent": "Check out this shot I captured of jupiter!",
+      "likes": "247",
+      "dislikes": "8",
+      "comments": "Jupiter is so cool! did you know it protects us from space debris?"
+    },
+    {
+      "blogTitle": "Sunspots through filter",
+      "blogContent": "I Finally got my special sun filter for my telescope! What do you guys think?",
+      "likes": "532",
+      "dislikes": "13",
+      "comments": "Wow! I cant wait for my filter to arrive!"
+    }
+  ]
