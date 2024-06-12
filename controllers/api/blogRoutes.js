@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Blog } = require('../../models')
-const { isAuthorized } = require('../../utils/auth');
+const isAuthorized = require('../../utils/auth');
 
 router.post('/', isAuthorized, async (req, res) => {
     //route for posting blog

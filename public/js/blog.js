@@ -14,7 +14,7 @@ const newBlog = async (event) => {
         if (response.ok) {
             document.location.replace('/profile')
         } else {
-            //error handling
+            alert('failed to create new post, please try again.')
         }
     }
 }
