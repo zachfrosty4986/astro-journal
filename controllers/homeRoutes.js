@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Blog } = require('../models');
 
 router.get('/', async (req, res) => {
-    //homepage feed route
+    res.render("index");
 })
 
 router.get('/blog', async (req, res) => {
