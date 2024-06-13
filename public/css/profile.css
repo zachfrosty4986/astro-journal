@@ -1,17 +1,133 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite; /* Keep consistent with styles.css */
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar-item,
+.navbar-link {
+    color: #fff !important; /* Override Bulma's default styles */
+}
+
+.navbar-burger {
+    color: #fff;
+}
+
+.navbar-menu {
+    background-color: #333;
+}
+
+.navbar-dropdown {
+    background-color: #444;
+}
+
+.navbar-item:hover,
+.navbar-link:hover {
+    background-color: #444;
+}
+
+.navbar-item.is-selected {
+    background-color: #555;
+}
+
+/* Main Layout */
 main {
     display: flex;
+    flex-direction: row;
+    height: calc(100vh - 52px); /* Adjust for the height of the navbar */
+    overflow: hidden;
 }
 
-main aside {
+/* Sidebar (Aside) */
+aside.menu {
     width: 20%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-main article {
-    width: 75%;
+.menu-label {
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.image {
+
+.menu-list a {
+    color: #333;
+    text-decoration: none;
     display: block;
-    position: relative;
-    float: right;
-    width: 10%;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-list a:hover {
+    background-color: #d4af37; /* Highlight color to match the accent */
+    color: #fff;
+}
+
+/* Active menu item */
+.menu-list a.is-active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Main Content (Article) */
+article {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Profile Picture */
+figure.image {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+figure.image img {
+    border-radius: 50%;
+    border: 5px solid #d4af37; /* Match accent color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside.menu {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    article {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    aside.menu {
+        width: 30%;
+    }
+
+    article {
+        width: 70%;
+    }
 }
