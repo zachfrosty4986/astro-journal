@@ -1,3 +1,31 @@
-{{>profileSidebar}}
-
-<p>This is the profile page</p>
+<main>
+    <aside class="menu">
+        <p class="menu-label">General</p>
+        <ul class="menu-list">
+            <li><a href="./">{{ generalMenu.mainMenu }}</a></li>
+            <li><a href="./profile.handlebars">{{ generalMenu.yourProfile }}</a></li>
+            <li><a href="./index.handlebars">{{ generalMenu.blogPage }}</a></li>
+        </ul>
+        <p class="menu-label">Outside sources</p>
+        <ul class="menu-list">
+            <li><a href="https://www.nasa.gov/">{{ outsideSources.nasaHomepage }}</a></li>
+            <li><a href="https://spaceplace.nasa.gov/menu/play/">{{ outsideSources.astronomyGames }}</a></li>
+            <li><a href="https://astro.cafeastrology.com/natal.php">{{ outsidesources.astrologyChart }}</a></li>
+            <li><a href="https://www.space.com/">{{ outsideSources.spaceNews }}</a></li>
+        </ul>
+    </aside>
+    <article>
+        <!-- Profile picture code below: -->
+        <section>
+            <figure class="image">
+                <img class="is-rounded" src="{{ profilePictureUrl }}">
+            </figure>
+        </section>
+        <!-- <section class="section">
+      <div class="container">
+        <h1 class="title">{{ pageTitle }}</h1>
+        <p class="subtitle">{{ pageSubtitle }}</p>
+      </div>
+    </section> -->
+    </article>
+</main>
