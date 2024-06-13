@@ -1,11 +1,191 @@
-<!-- Content -->
+  <body>
+    <!-- Container at the top of the page -->
+    <div class="container is-fluid">
+      <div class="notification is-primary">
+        This container is <strong>fluid</strong>: it will have a 32px gap on either
+        side, on any viewport size.
+      </div>
+    </div>
+    
+    <!-- Small sized section -->
     <section class="section">
-        <div class="container">
-            {{#each items}}
-            <h1 class="title">{{this.title}}</h1>
-            <h2 class="description">{{this.description}}</h2>
-            {{/each}}
-        </div>
+      <h1 class="title">Section</h1>
+      <h2 class="subtitle">
+        A simple container to divide your page into <strong>sections</strong>, like
+        the one you're currently reading.
+      </h2>
     </section>
-
-
+    
+    <!-- Blog Post with Like and Retweet -->
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{author}}</strong> <small>@{{username}}</small> <small>{{timestamp}}</small>
+            <br />
+            {{content}}
+          </p>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <a class="level-item">
+              <span class="icon is-small"><i class="fas fa-reply"></i></span>
+            </a>
+            <a class="level-item">
+              <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+            </a>
+            <a class="level-item">
+              <span class="icon is-small"><i class="fas fa-heart"></i></span>
+            </a>
+          </div>
+        </nav>
+      </div>
+      <div class="media-right">
+        <button class="delete"></button>
+      </div>
+    </article>
+    
+    <!-- Add small section with post:  -->
+    <section class="section">
+      <h1 class="title">Section</h1>
+      <h2 class="subtitle">
+        A simple container to divide your page into <strong>sections</strong>, like
+        the one you're currently reading.
+      </h2>
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="field">
+            <p class="control">
+              <textarea class="textarea" placeholder="Add a post..."></textarea>
+            </p>
+          </div>
+          <nav class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <a class="button is-info">Submit</a>
+              </div>
+            </div>
+            <div class="level-right">
+              <div class="level-item">
+                <label class="checkbox">
+                  <input type="checkbox" /> Press enter to submit
+                </label>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </section>
+    
+    <!-- Add Blog Content Here: -->
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{author}}</strong>
+            <br />
+            {{content}}
+            <br />
+            <small><a>Like</a> · <a>Reply</a> · {{timestamp}}</small>
+          </p>
+        </div>
+        <!-- More Post -->
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-48x48">
+              <img src="https://bulma.io/assets/images/placeholders/96x96.png" />
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{commentAuthor}}</strong>
+                <br />
+                {{commentContent}}
+                <br />
+                <small><a>Like</a> · <a>Reply</a> · {{commentTimestamp}}</small>
+              </p>
+            </div>
+      
+            <article class="media">
+              {{moreContent}}
+            </article>
+      
+            <article class="media">
+              {{additionalContent}}
+            </article>
+          </div>
+        </article>
+      
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-48x48">
+              <img src="https://bulma.io/assets/images/placeholders/96x96.png" />
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{commentAuthor}}</strong>
+                <br />
+                {{commentContent}}
+                <br />
+                <small><a>Like</a> · <a>Reply</a> · {{commentTimestamp}}</small>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </article>
+    
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="field">
+          <p class="control">
+            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button">Post comment</button>
+          </p>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+          The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
+          website content is licensed
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            >CC BY NC SA 4.0</a
+          >.
+        </p>
+      </div>
+    </footer>
+  </body>
+ 
