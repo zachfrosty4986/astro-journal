@@ -15,7 +15,7 @@ const signUp = async (event) => {
         if (response.ok) {
             document.location.replace('/profile')
         } else {
-            //error handling here
+            alert('Failed to signup, please try again.')
         }
     }
 };
@@ -36,7 +36,7 @@ const login = async (event) => {
         if (response.ok) {
             document.location.replace('/profile')
         } else {
-            //error handling here
+            alert('Failed to login, please try again.')
         }
     }
 }
@@ -50,7 +50,7 @@ const logout = async () => {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        //error handling
+        alert('Failed to logout, please try again.')
     }
 }
 

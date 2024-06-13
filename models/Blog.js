@@ -30,6 +30,10 @@ Blog.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
+        },
+        likes: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         }
     },
     {
