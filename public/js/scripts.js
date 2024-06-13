@@ -2,14 +2,15 @@
 const signUp = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('#').value
-    const userName = document.querySelector('#').value
-    const password = document.querySelector('#').value
+    const email = document.querySelector('#email').value
+    const name = document.querySelector('#username').value
+    const password = document.querySelector('#password').value
 
-    if (email && userName && password) {
+    if (email && name && password) {
         const response = await fetch('/api/user', {
             method: 'POST',
-            body: JSON.stringify({ email, userName, password }),
+            body: JSON.stringify({ email, name, password }),
+            headers: { 'Content-Type': 'application/json', },
         })
 
         if (response.ok) {
@@ -24,13 +25,14 @@ const signUp = async (event) => {
 const login = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('#').value
-    const password = document.querySelector('#').value
+    const username = document.querySelector('#username').value
+    const password = document.querySelector('#password').value
 
-    if (email && password) {
+    if (username && password) {
         const response = await fetch('/api/user/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
+            headers: { 'Content-Type': 'application/json', },
         })
 
         if (response.ok) {
@@ -55,6 +57,6 @@ const logout = async () => {
 }
 
 
-document.querySelector('#').addEventListener('submit', signUp);
-document.querySelector('#').addEventListener('submit', login);
-document.querySelector('#').addEventListener('click', logout);
+document.querySelector('#signUpBtn').addEventListener('click', signUp);
+// document.querySelector('#loginBtn').addEventListener('click', login);
+// document.querySelector('#').addEventListener('click', logout);

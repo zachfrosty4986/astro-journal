@@ -2,12 +2,12 @@ const router = require('express').Router();
 const { Blog } = require('../../models')
 const isAuthorized = require('../../utils/auth');
 
-router.post('/', isAuthorized, async (req, res) => {
+router.post('/', async (req, res) => {
     //route for posting blog
     try {
         const newBlog = await Blog.create({
-            user_id: req.session.user_id,
-            date_posted: req.body.date_posted,
+            // user_id: req.session.user_id,
+            // date_posted: req.body.date_posted,
             title: req.body.title,
             content: req.body.content,
         })
