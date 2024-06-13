@@ -1,8 +1,12 @@
 const router = require('express').Router();
 const { User, Blog } = require('../models');
+const isAuthorized = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    res.render("index");
+    res.render("index", {
+        logged_in: req.session.logged_in
+    });
+
 })
 
 router.get('/signup', async (req, res) => {
@@ -18,7 +22,7 @@ router.get('/blog', async (req, res) => {
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
         res.render('blog', {
             ...blogs,
-            logged_in: true
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(500).json(err)
@@ -34,16 +38,15 @@ router.get('/blog/:id', async (req, res) => {
         const blog = blogData.get({ plain: true })
         res.render('profile', {
             ...blog,
-            logged_in: true
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(500).json(err)
     }
 })
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', isAuthorized, async (req, res) => {
     //route to get YOUR profile page
-    //add middleware to prevent access to route for other user
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -52,7 +55,7 @@ router.get('/profile', async (req, res) => {
         const user = userData.get({ plain: true });
         res.render('profile', {
             ...user,
-            logged_in: true
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(500).json(err)
