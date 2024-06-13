@@ -5,6 +5,10 @@ router.get('/', async (req, res) => {
     res.render("index");
 })
 
+router.get('/signup', async (req, res) => {
+    res.render("signup");
+})
+
 router.get('/blog', async (req, res) => {
     //route to get all blogs
     try {
@@ -12,7 +16,7 @@ router.get('/blog', async (req, res) => {
             include: [{ model: User, attributes: ['name'] }],
         })
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
-        res.render('profile', {
+        res.render('blog', {
             ...blogs,
             logged_in: true
         })
@@ -56,7 +60,7 @@ router.get('/profile', async (req, res) => {
 })
 
 router.get('/login', async (req, res) => {
-    //route to redirect login to profile
+    //route for login, if already logged in redirects to profile
     if (req.session.logged_in) {
         res.redirect('/profile')
         return
