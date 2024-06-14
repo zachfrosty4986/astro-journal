@@ -1,33 +1,54 @@
-<main>
-    <aside class="menu">
-        <p class="menu-label">General</p>
-        <ul class="menu-list">
-            <li><a href="./index">{{ generalMenu.mainMenu }}</a></li>
-            <li><a href="./profile">{{ generalMenu.yourProfile }}</a></li>
-            <li><a href="./blog">{{ generalMenu.blogPage }}</a></li>
-        </ul>
-        <p class="menu-label">Outside sources</p>
-        <ul class="menu-list">
-            <li><a href="https://www.nasa.gov/">{{ outsideSources.nasaHomepage }}</a></li>
-            <li><a href="https://spaceplace.nasa.gov/menu/play/">{{ outsideSources.astronomyGames }}</a></li>
-            <li><a href="https://astro.cafeastrology.com/natal.php">{{ outsidesources.astrologyChart }}</a></li>
-            <li><a href="https://www.space.com/">{{ outsideSources.spaceNews }}</a></li>
-        </ul>
-    </aside>
-    <article>
-        <!-- Profile picture code below: -->
+<body>
+{{!-- Title --}}
+    <div class="container-for-title">
+    <h1 class="title">Welcome, Destiny!</h1>
+    <h2 class="subtitle">Tell us what's on your mind about anything astrology!</h2>
+    </div>
+{{!-- Blog Post section --}}
+  <section class="section">
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Name of your post" id="title">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input" type="email" placeholder="Email input">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-exclamation-triangle"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Content</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="Talk about your finding" id="blogContent"></textarea>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link" id="submitBlog">Submit</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">Clear</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
         <section>
             <figure class="image">
                 <img class="is-rounded" src="{{ profilePictureUrl }}">
             </figure>
         </section>
-        <!-- <section class="section">
-      <div class="container">
-        <h1 class="title">{{ pageTitle }}</h1>
-        <p class="subtitle">{{ pageSubtitle }}</p>
-      </div>
-    </section> -->
     </article>
 </main>
-
-
