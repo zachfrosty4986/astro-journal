@@ -1,7 +1,7 @@
 <body>
 {{!-- Title --}}
     <div class="container-for-title">
-    <h1 class="title">Welcome, Destiny!</h1>
+    <h1 class="title">Welcome, {{name}}</h1>
     <h2 class="subtitle">Tell us what's on your mind about anything astrology!</h2>
     </div>
 {{!-- Blog Post section --}}
@@ -14,15 +14,8 @@
     </div>
 
     <div class="field">
-      <label class="label">Email</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="email" placeholder="Email input">
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
+      <label class="label">Image</label>
+        <input class="input" type="email" placeholder="Post a link to an image if you have one!">
       </div>
     </div>
 
@@ -42,13 +35,21 @@
       </div>
     </div>
   </section>
-</body>
-</html>
 
-        <section>
-            <figure class="image">
-                <img class="is-rounded" src="{{ profilePictureUrl }}">
-            </figure>
-        </section>
-    </article>
-</main>
+  {{#if blogs.length}}
+  <div id="your-blogs">
+  <h2>Active Posts</h2>
+  {{#each blogs as |blog|}}
+  <div>
+      <div>
+        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+      </div>
+      <div>
+        <button class="button is-danger" data-id="{{blog.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  {{/if}}
+  </div>
+</body>
+<script src="/js/blog.js"></script>

@@ -20,8 +20,8 @@ router.get('/blog', async (req, res) => {
             include: [{ model: User, attributes: ['name'] }],
         })
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
-        res.render('blog', {
-            ...blogs,
+        res.render('blogFeed', {
+            blogs,
             logged_in: req.session.logged_in
         })
     } catch (err) {
@@ -36,7 +36,7 @@ router.get('/blog/:id', async (req, res) => {
             include: [{ model: User, attributes: ['name'] }],
         })
         const blog = blogData.get({ plain: true })
-        res.render('profile', {
+        res.render('singleBlog', {
             ...blog,
             logged_in: req.session.logged_in
         })
