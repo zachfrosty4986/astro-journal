@@ -28,7 +28,7 @@ Blog.init(
         },
         date_posted: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: DataTypes.NOW,
         },
         likes: {
