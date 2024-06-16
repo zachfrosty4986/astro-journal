@@ -4,7 +4,8 @@ const isAuthorized = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     res.render("index", {
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        title: "Home",
     });
 
 })
