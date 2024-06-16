@@ -10,6 +10,7 @@ const addComment = async () => {
       });
 
       if (response.ok) {
+         const data = await response.json();
          document.location.replace(`/blog/${blogID}`);
       } else {
          alert('Failed to create comment, try again');
