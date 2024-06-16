@@ -6,10 +6,11 @@ router.post('/', async (req, res) => {
     //route for posting blog
     try {
         const newBlog = await Blog.create({
-            // user_id: req.session.user_id,
-            // date_posted: req.body.date_posted,
+            user_id: req.session.user_id,
             title: req.body.title,
             content: req.body.content,
+            date_posted: req.body.date_posted,
+            likes: 0,
         })
         res.status(200).json(newBlog)
     } catch (err) {

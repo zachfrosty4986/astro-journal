@@ -24,4 +24,20 @@ const newBlog = async (event) => {
 }
 
 //function to delete blog
+const deletebtn = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/blog/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete post, try again');
+      }
+    }
+  };
 document.querySelector('#submitBlog').addEventListener('click', newBlog);
+document.querySelector('#your-blogs').addEventListener('click', deletebtn);
