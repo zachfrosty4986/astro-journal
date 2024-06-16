@@ -72,4 +72,11 @@ router.get('/login', async (req, res) => {
     res.render('login')
 })
 //
+
+router.get('/like:blog_id', async (req, res) => {
+    //route for liking post, increases integer of likes by 1
+    await Blog.increment({ likes: 1 }, { where: { id: req.params.blog_id } }).then((data) => {
+        res.json(data);
+    });
+})
 module.exports = router;
