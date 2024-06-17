@@ -41,4 +41,4 @@ const deletebtn = async (event) => {
   };
   
 document.querySelector('#submitBlog').addEventListener('click', newBlog);
-document.querySelector('#your-blogs').addEventListener('click', deletebtn);
+document.querySelector('#delete').addEventListener('click', deletebtn);
