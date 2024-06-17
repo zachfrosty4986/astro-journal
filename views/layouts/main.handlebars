@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/bulma-overrides.css">
+    {{!-- Renders Css to homepage --}}
     {{#if (eq title "Home")}}
     <link rel="stylesheet" href="/css/home.css">
+    {{/if}}
+        {{!-- Renders Css to log-in page --}}
+    {{#if (eq title "Login")}}
+    <link rel="stylesheet" href="/css/login.css">
+    {{/if}}
+    {{!-- Renders Css to profile page --}}
+    {{#if (eq title "Profile")}}
+    <link rel="stylesheet" href="/css/profile.css">
     {{/if}}
   </head>
   <body>

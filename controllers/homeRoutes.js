@@ -40,7 +40,8 @@ router.get('/blog/:id', async (req, res) => {
         const blog = blogData.get({ plain: true })
         res.render('singleBlog', {
             ...blog,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            title: "Singleblog"
         })
     } catch (err) {
         res.status(500).json(err)
@@ -57,7 +58,8 @@ router.get('/profile', isAuthorized, async (req, res) => {
         const user = userData.get({ plain: true });
         res.render('profile', {
             ...user,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            title: "Profile",
         })
     } catch (err) {
         res.status(500).json(err)
@@ -70,7 +72,9 @@ router.get('/login', async (req, res) => {
         res.redirect('/profile')
         return
     }
-    res.render('login')
+    res.render("login", {
+        title: "Login",
+    })
 })
 
 //route to like a blog
