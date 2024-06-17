@@ -41,7 +41,6 @@ router.get('/blog/:id', async (req, res) => {
         res.render('singleBlog', {
             ...blog,
             logged_in: req.session.logged_in,
-            title: "Singleblog"
         })
     } catch (err) {
         res.status(500).json(err)
