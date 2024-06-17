@@ -1,11 +1,14 @@
 <body>
 {{!-- Title --}}
+<section class="section is-family-monospace">
     <div class="container-for-title">
-    <h1 class="title">Welcome, {{name}}</h1>
-    <h2 class="subtitle">Tell us what's on your mind about anything astrology!</h2>
+    <h1 class="title columns is-centered">Welcome, {{name}}</h1>
+    <h2 class="subtitle columns is-centered">Tell us what's on your mind about anything astrology!</h2>
     </div>
+</section>
 {{!-- Blog Post section --}}
-  <section class="section">
+<section class="columns is-centered is-family-monospace">
+  <section class="blog-section column is-half">
     <div class="field">
       <label class="label">Title</label>
       <div class="control">
@@ -14,8 +17,8 @@
     </div>
 
     <div class="field">
-      <label class="label">Image</label>
-        <input class="input" type="email" placeholder="Post a link to an image if you have one!">
+      <label class="label">Zodiac Sign</label>
+        <input class="input" type="email" placeholder="What is yoru zodiac sign?">
       </div>
     </div>
 
@@ -26,6 +29,8 @@
       </div>
     </div>
 
+
+  <section class="columns is-centered" id="buttons">
     <div class="field is-grouped">
       <div class="control">
         <button class="button is-link" id="submitBlog">Submit</button>
@@ -34,22 +39,24 @@
         <button class="button is-link is-light">Clear</button>
       </div>
     </div>
+    </section>
+  </section>
   </section>
 
+  <hr>
+
+<section class="section columns is-centered">
   {{#if blogs.length}}
-  <div id="your-blogs">
-  <h2>Active Posts</h2>
+  <h3 class="title is-family-monospace">Active Posts</h3>
   {{#each blogs as |blog|}}
-  <div>
-      <div>
-        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
-      </div>
-      <div>
+</div>
+</section>
+
+<section class="section" id="blog-entry">
+      <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
         <button class="button is-danger" data-id="{{blog.id}}">DELETE</button>
-      </div>
-    </div>
     {{/each}}
   {{/if}}
-  </div>
+  </section>
 </body>
 <script src="/js/blog.js"></script>
