@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog } = require('../models');
+const { User, Blog, Comment} = require('../models');
 const isAuthorized = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -35,6 +35,7 @@ router.get('/blog/:id', async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {
             include: [{ model: User, attributes: ['name'] }],
+            include: [{ model: Comment }],
         })
         const blog = blogData.get({ plain: true })
         res.render('singleBlog', {
@@ -71,12 +72,23 @@ router.get('/login', async (req, res) => {
     }
     res.render('login')
 })
-//
 
-router.get('/like:blog_id', async (req, res) => {
-    //route for liking post, increases integer of likes by 1
-    await Blog.increment({ likes: 1 }, { where: { id: req.params.blog_id } }).then((data) => {
-        res.json(data);
-    });
-})
+//route to like a blog
+router.put('/like/:id', async (req, res) => {
+    try {
+        //find the blog
+        const blog = await Blog.findByPk(req.params.id);
+
+        if (!blog) {
+            return res.status(404).json({ message: 'blog not found' });
+        }
+
+        //update the likes
+        blog.likes += 1;
+        //save the changes
+        await blog.save();
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 module.exports = router;

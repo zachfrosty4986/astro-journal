@@ -19,13 +19,20 @@ Blog.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
+//a blog has many comments
+Blog.hasMany(Comment, {
+    foreignKey: 'blog_id',
+    onDelete: 'CASCADE'
+})
+
 //comments belong to a User
 Comment.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
+//comment also belongs to a blog
 Comment.belongsTo(Blog, {
-    foreignKey: 'Blog_id',
+    foreignKey: 'blog_id',
     onDelete: 'CASCADE'
 })
 

@@ -16,10 +16,10 @@
 
 <div>
   {{#if comments.length}}
-  {{#each comments}}
-  <div class="bolder-container bolder-container-blue">
-    <p>{{content}}</p><br>
-    <p>Comment Made: {{date_posted}}</p>
+  {{#each comments as |comment|}}
+  <div>
+    <p>{{comment.content}}</p><br>
+    <p>Comment Made: {{comment.date_posted}}</p>
     <br>
     <p>By:{{user.name}}</p>
     {{/each}}

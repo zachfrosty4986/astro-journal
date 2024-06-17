@@ -1,16 +1,16 @@
+const commentText = document.querySelector("#commentField").value;
+const blogID = document.querySelector("#blogNum").textContent
+
 const addComment = async () => {
-   const commentText = document.querySelector("#commentField").value;
-   const blogID = document.querySelector('#blogNum').value
 
    if (commentText && blogID) {
       const response = await fetch("/api/comment/", {
          method: "POST",
-         body: JSON.stringify({ body: commentText, blog_id: blogID }),
+         body: JSON.stringify({ content: commentText, blog_id: blogID }),
          headers: { "Content-Type": "application/json" },
       });
 
       if (response.ok) {
-         const data = await response.json();
          document.location.replace(`/blog/${blogID}`);
       } else {
          alert('Failed to create comment, try again');
@@ -18,4 +18,19 @@ const addComment = async () => {
    }
 }
 
+const addLike = async () => {
+
+   const response = await fetch(`/like/${blogID}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+   });
+
+   if (response.ok) {
+      document.location.replace(`/blog/${blogID}`);
+   } else {
+      alert('Failed to like post, try again');
+   }
+}
+
+document.querySelector('#addLike').addEventListener('click', addLike)
 document.querySelector('#addComment').addEventListener('click', addComment)
