@@ -51,3 +51,15 @@
   zachjames0114@gmail.com
 
   https://github.com/zachfrosty4986/astro-journal
+
+  ## Screenshots
+
+  Homepage: [![image.png](https://i.postimg.cc/MKdjVtVF/image.png)](https://postimg.cc/JGHnWNTN)
+
+  Profile: [![image.png](https://i.postimg.cc/s2XF1fyL/image.png)](https://postimg.cc/bZKVBhZ0)
+
+  Login: [![image.png](https://i.postimg.cc/qR1zyvCC/image.png)](https://postimg.cc/phnWtxC2)
+
+  Signup: [![image.png](https://i.postimg.cc/8z79VKH8/image.png)](https://postimg.cc/LJMNtVwv)
+
+  Feed: [![image.png](https://i.postimg.cc/j2jv423V/image.png)](https://postimg.cc/TLZrRdXQ)
