@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
+const moment = require('moment')
 
 class Comment extends Model { }
 Comment.init(
@@ -29,9 +30,9 @@ Comment.init(
             },
         },
         date_posted: {
-            type: DataTypes.DATE,
-            allowNull: true,
-            defaultValue: DataTypes.NOW,
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: moment().format('MMMM Do YYYY, h:mm:ss a'),
         },
         likes: {
             type: DataTypes.INTEGER,
