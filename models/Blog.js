@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
+const moment = require('moment')
 
 class Blog extends Model { }
 
@@ -26,10 +27,10 @@ Blog.init(
                 key: 'id',
             },
         },
-        date_posted: {
-            type: DataTypes.DATE,
-            allowNull: true,
-            defaultValue: DataTypes.NOW,
+        date_created: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: moment().format("L")
         },
         likes: {
             type: DataTypes.INTEGER,

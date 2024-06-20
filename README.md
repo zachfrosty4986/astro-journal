@@ -52,6 +52,8 @@
 
   https://github.com/zachfrosty4986/astro-journal
 
+  Deployed Page : https://astro-journal.onrender.com/
+
   ## Screenshots
 
   Homepage: [![image.png](https://i.postimg.cc/MKdjVtVF/image.png)](https://postimg.cc/JGHnWNTN)

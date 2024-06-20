@@ -1,7 +1,7 @@
-const addComment = async () => {
+const addComment = async (event) => {
 
    const commentText = document.querySelector("#commentField").value;
-   const blogID = document.querySelector("#blogNum").textContent
+   const blogID = event.target.getAttribute('data-id');
 
    if (commentText && blogID) {
       const response = await fetch("/api/comment/", {
@@ -18,9 +18,10 @@ const addComment = async () => {
    }
 }
 
-const addLike = async () => {
 
-   const blogID = document.querySelector("#blogNum").textContent
+const addLike = async (event) => {
+
+   const blogID = event.target.getAttribute('data-id');
 
    const response = await fetch(`/like/${blogID}`, {
       method: "PUT",
