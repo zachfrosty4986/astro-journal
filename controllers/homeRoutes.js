@@ -34,9 +34,11 @@ router.get('/blog/:id', async (req, res) => {
     //route to get single blog
     try {
         const blogData = await Blog.findByPk(req.params.id, {
-            include: [{ model: User, attributes: ['name'] }, { model: Comment }],
+            include: [{ model: User, attributes: ['name'] }, 
+            { model: Comment, include: [{ model: User, attributes: ['name'] }] }],
         })
         const blog = blogData.get({ plain: true })
+        console.log(blog)
         res.render('singleBlog', {
             ...blog,
             logged_in: req.session.logged_in,
